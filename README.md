@@ -20,7 +20,7 @@ The RBAC of default `openshift-gitops` ArgoCD instance:
     scopes: '[groups]'
 ```
 
-Notes: Only users under `system:cluster-admins` and `cluster-admins` groups have `role:admin`, other users only have `role:admin` permissions.
+Notes: Only users under `system:cluster-admins` and `cluster-admins` groups have `role:admin`, other users only have `role:readonly` permissions.
 
 Check existing groups:
 ```bash
@@ -72,7 +72,7 @@ Application details:
   - Cluster URL: `https://kubernetes.default.svc`
   - Namespace: `spring-petclinic`
 
-### Deploy by command
+#### Deploy by command
 
 On IaC repo: https://github.com/xdevops-caj-lab-gitops-cd/gitops-example-iac
 
