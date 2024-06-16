@@ -84,7 +84,7 @@ oc delete namespace  spring-petclinic
 
 ## Kustomize and ApplicationSet
 
-Use Kustomize and ArgoCD applicationset to deploy an appliction to multi-envs.
+Use Kustomize and ArgoCD ApplicationSet to deploy an appliction to multi-envs.
 
 On IaC repo: https://github.com/xdevops-caj-lab-gitops-cd/gitops-example-iac
 
@@ -122,7 +122,7 @@ Login OpenShift with `user1`.
 
 Login ArgoCD Web UI with `user1`, but the user can't see any applications.
 
-Add a group `cluster-admins`, and add the user `user1` into this group:
+Add a group `bgd-group`, and add the user `user1` into this group:
 
 Run below command with cluter admin user:
 ```bash
