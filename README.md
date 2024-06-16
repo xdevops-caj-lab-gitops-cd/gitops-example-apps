@@ -106,8 +106,7 @@ We use `appproj-bgd` to organize ArgoCD applications.
 
 ### RBAC in AppProject
 
-We set users under `bgd-group` has readonly permission for `approj-bdg` approject.
-
+We set users under `bgd-group` has readonly permission for `approj-bgd` approject.
 ```yaml
   - name: read-only
     policies:
