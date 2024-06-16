@@ -102,11 +102,11 @@ Verify ArgoCD applications and OpenShift resources on ArgoCD Web UI.
 
 ## AppProject
 
-We use `appproj-bgd` to organize ArgoCD applications.
+We use `appproj-bgd` AppProject to organize ArgoCD applications.
 
 ### RBAC in AppProject
 
-We set users under `bgd-group` has readonly permission for `approj-bgd` approject.
+We set users under `bgd-group` has a readonly permission for `approj-bgd` AppProject.
 ```yaml
   - name: read-only
     policies:
