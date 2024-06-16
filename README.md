@@ -82,12 +82,83 @@ oc delete application spring-petclinic -n openshift-gitops
 oc delete namespace  spring-petclinic
 ```
 
-## Kustomize
+## Kustomize and ApplicationSet
 
+Use Kustomize and ArgoCD applicationset to deploy an appliction to multi-envs.
+
+On IaC repo: https://github.com/xdevops-caj-lab-gitops-cd/gitops-example-iac
+
+Run below commands to create namespace (simulate for env) and ArgoCD applicationset.
+
+```bash
+oc apply -f apps/bgd
+```
+
+Open the route url of `bgd-dev` and `bgd-sit` to veify the color of dot is different.
+
+Verify ArgoCD applications and OpenShift resources on ArgoCD Web UI.
+
+
+
+## AppProject
+
+We use `appproj-bgd` to organize ArgoCD applications.
+
+### RBAC in AppProject
+
+We set users under `bgd-group` has readonly permission for `approj-bdg` approject.
+
+```yaml
+  - name: read-only
+    policies:
+    - p, proj:appproj-bgd:read-only, applications, get, appproj-bgd/*, allow
+    groups:
+    - bgd-group
+```
+
+### Create a Group and Add a User into the group
+
+Login OpenShift with `user1`.
+
+Login ArgoCD Web UI with `user1`, but the user can't see any applications.
+
+Add a group `cluster-admins`, and add the user `user1` into this group:
+
+Run below command with cluter admin user:
+```bash
+oc adm groups new bgd-group
+oc adm groups add-users bgd-group user1
+```
+
+Verify the new created group:
+```bash
+oc get group bgd-group
+```
+
+Re-login ArgoCD Web UI with `user1`, the user can view the applciations under `appproj-bgd`, but can't operate the applications due to permission denied.
+
+
+
+## App of Apps
+
+TODO
+
+## Syn Window
+
+TODO
+
+
+## Helm Chart
+
+TODO
+
+## Deploy to another cluster
+
+TODO
 
 ## References
 
 - https://github.com/redhat-developer/gitops-operator/
 - https://github.com/redhat-developer/gitops-operator/blob/master/docs/OpenShift%20GitOps%20Usage%20Guide.md
 - https://argo-cd.readthedocs.io/en/stable/operator-manual/rbac/
-
+- https://argo-cd.readthedocs.io/en/latest/user-guide
