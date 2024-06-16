@@ -1,12 +1,5 @@
 # GitOps Example Apps
 
-
-## Check list
-
-- Test deploy a simple application to different namespace
-  - on ArgoCD Web UI
-  - on command
-
 ## Create a Group and Add a User into the group
 
 The RBAC of default `openshift-gitops` ArgoCD instance:
@@ -88,6 +81,9 @@ oc apply -f apps/spring-petclinic
 oc delete application spring-petclinic -n openshift-gitops
 oc delete namespace  spring-petclinic
 ```
+
+## Kustomize
+
 
 ## References
 
