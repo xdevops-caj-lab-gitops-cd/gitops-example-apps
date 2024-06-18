@@ -75,6 +75,10 @@ Run below commands to create namespace and ArgoCD application.
 oc apply -f apps/spring-petclinic
 ```
 
+#### Test GitOps
+
+Modify replicas of `deployment.yaml` to see if it will auto sync to target cluster.
+
 #### Clean up
 
 ```bash
