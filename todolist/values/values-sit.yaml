@@ -1,5 +1,5 @@
 app_name: todolist
-replicas: 1 # DEV: override the replicas
+replicas: 1 # SIT: override the replicas
 # Docker deets
 image_repository: quay.io
 image_name: do500-todolist
@@ -13,7 +13,7 @@ fathom: false
 # OCP route
 route: true
 
-message: "hello from SIT env, Well done!!" # DEV: override the message
+message: "hello from SIT env, Well done!!" # SIT: override the message
 
 env_vars:
   # - name: MESSAGE
