@@ -140,18 +140,39 @@ oc get group bgd-group
 
 Re-login ArgoCD Web UI with `user1`, the user can view the applciations under `appproj-bgd`, but can't operate the applications due to permission denied.
 
+## Helm Chart
 
+
+### Deploy a Helm Chart from a Helm repository
+
+Run below commands to create namespace and ArgoCD application.
+
+```bash
+oc apply -f apps/todolist
+```
+
+### Deploy a Helm chart from Git repository
+
+
+
+### Deploy a Helm chart from a Helm repository but values from a Git repository
+
+Helm value files from external Git repository¶
+One of the most common scenarios for using multiple sources is the following
+
+- Your organization wants to use an external/public Helm chart
+- You want to override the Helm values with your own local values
+- You don't want to clone the Helm chart locally as well because that would lead to duplication and you would need to monitor it manually for upstream changes.
+
+https://argo-cd.readthedocs.io/en/latest/user-guide/multiple_sources/
 
 ## App of Apps
 
 TODO
 
+
+
 ## Syn Window
-
-TODO
-
-
-## Helm Chart
 
 TODO
 

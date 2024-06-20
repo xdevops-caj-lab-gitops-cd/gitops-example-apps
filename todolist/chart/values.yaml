@@ -1,0 +1,20 @@
+app_name: todolist
+replicas: 1
+# Docker deets
+image_repository: quay.io
+image_name: do500-todolist
+image_namespace: rht-labs
+# likely over written by the Argo definition
+image_version: next
+a_b_deploy:
+  weight: 100
+  # svc_name:
+fathom: false
+# OCP route
+route: true
+
+message: "hello from the backend server 👋"
+
+env_vars:
+  # - name: MESSAGE
+  #   value: ''
