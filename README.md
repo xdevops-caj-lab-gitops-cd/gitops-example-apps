@@ -170,6 +170,14 @@ One of the most common scenarios for using multiple sources is the following
 
 https://argo-cd.readthedocs.io/en/latest/user-guide/multiple_sources/
 
+Run below commands to create namespace and ArgoCD application.
+
+```bash
+oc apply -f apps/todolist-multi-sources
+```
+
+Try to modify something in `todolist/values/values-dev.yaml`, to see if it will auto sync to target cluster.
+
 ## App of Apps
 
 TODO

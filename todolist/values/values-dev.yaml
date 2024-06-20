@@ -13,7 +13,7 @@ fathom: false
 # OCP route
 route: true
 
-message: "hello from DEV env" # DEV: override the message
+message: "hello from DEV env, AWESOME!!" # DEV: override the message
 
 env_vars:
   # - name: MESSAGE
