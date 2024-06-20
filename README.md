@@ -39,6 +39,12 @@ To grant Argo CD the permissions to manage resources in multiple namespaces, we 
 oc label namespace <namespace> argocd.argoproj.io/managed-by=<namespace of argocd instance>
 ```
 
+## IaC repository
+
+IaC repository contains ArgoCD CRD and namespaces:
+
+- https://github.com/xdevops-caj-lab-gitops-cd/gitops-example-iac
+
 ## Simple App
 
 
@@ -67,9 +73,9 @@ Application details:
 
 #### Deploy by command
 
-On IaC repo: https://github.com/xdevops-caj-lab-gitops-cd/gitops-example-iac
 
-Run below commands to create namespace and ArgoCD application.
+
+Run below commands to create namespace and ArgoCD application on IaC repo:
 
 ```bash
 oc apply -f apps/spring-petclinic
@@ -90,9 +96,7 @@ oc delete namespace  spring-petclinic
 
 Use Kustomize and ArgoCD ApplicationSet to deploy an appliction to multi-envs.
 
-On IaC repo: https://github.com/xdevops-caj-lab-gitops-cd/gitops-example-iac
-
-Run below commands to create namespace (simulate for env) and ArgoCD applicationset.
+Run below commands to create namespace (simulate for env) and ArgoCD applicationset on IaC repo.
 
 ```bash
 oc apply -f apps/bgd
@@ -145,7 +149,7 @@ Re-login ArgoCD Web UI with `user1`, the user can view the applciations under `a
 
 ### Deploy a Helm Chart from a Helm repository
 
-Run below commands to create namespace and ArgoCD application.
+Run below commands to create namespace and ArgoCD application on IaC repo:
 
 ```bash
 oc apply -f apps/todolist
@@ -153,7 +157,7 @@ oc apply -f apps/todolist
 
 ### Deploy a Helm chart from Git repository
 
-Run below commands to create namespace and ArgoCD application.
+Run below commands to create namespace and ArgoCD application on IaC repo:
 
 ```bash
 oc apply -f apps/todolist-git
@@ -170,7 +174,7 @@ One of the most common scenarios for using multiple sources is the following
 
 https://argo-cd.readthedocs.io/en/latest/user-guide/multiple_sources/
 
-Run below commands to deploy application to DEV env:
+Run below commands to deploy application to DEV env on IaC repo:
 
 ```bash
 oc apply -f apps/todolist-multi-sources-dev
@@ -178,7 +182,7 @@ oc apply -f apps/todolist-multi-sources-dev
 
 Try to modify something in `todolist/values/values-dev.yaml`, to see if it will auto sync to target cluster.
 
-Use ApplicationSet to deploy appliton to DEV and SIT env:
+Use ApplicationSet to deploy appliton to DEV and SIT env on IaC repo:
 
 ```bash
 # clean up first
@@ -191,9 +195,11 @@ oc apply -f apps/todolist-multi-sources
 
 ## App of Apps
 
-TODO
+Run below commands to deploy app of apps on IaC repo:
 
-
+```bash
+oc apply -f app-of-apps/application.yaml
+```
 
 ## Syn Window
 
