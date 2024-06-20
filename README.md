@@ -153,7 +153,11 @@ oc apply -f apps/todolist
 
 ### Deploy a Helm chart from Git repository
 
+Run below commands to create namespace and ArgoCD application.
 
+```bash
+oc apply -f apps/todolist-git
+```
 
 ### Deploy a Helm chart from a Helm repository but values from a Git repository
 
