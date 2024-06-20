@@ -173,10 +173,21 @@ https://argo-cd.readthedocs.io/en/latest/user-guide/multiple_sources/
 Run below commands to create namespace and ArgoCD application.
 
 ```bash
-oc apply -f apps/todolist-multi-sources
+oc apply -f apps/todolist-multi-sources-dev
 ```
 
 Try to modify something in `todolist/values/values-dev.yaml`, to see if it will auto sync to target cluster.
+
+Use ApplicationSet to deploy appliton to multi-envs:
+
+```bash
+# clean up first
+oc delete application todolist-dev -n openshift-gitops
+oc delete namespace todolist
+
+# apply
+oc apply -f apps/todolist-multi-sources
+```
 
 ## App of Apps
 
